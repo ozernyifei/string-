@@ -275,10 +275,10 @@ static int sscanf_floating(const char **buf, const struct format *f,
   n = strtof(*buf, &end);
 
   if (!f->flag && !f->length) {
-    int *p = va_arg(vl, float *);
+    float *p = va_arg(vl, float *);
     *p = n;
   } else if (!f->flag && f->length == 'L') {
-    long *p = va_arg(vl, double *);
+    double *p = va_arg(vl, double *);
     *p = n;
   }
 
